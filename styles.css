@@ -77,7 +77,6 @@ footer {
 .center-content {
     text-align: center;
     margin: 0 auto;
-    max-width: 600px; /* Adjust the max-width as needed */
 }
 
 .contact-form {
@@ -110,3 +109,14 @@ footer {
 .contact-form button {
     margin-top: 20px;
 }
+
+.main-section {
+    background-image: url('images/background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+.background-image {
+    opacity: 0.5; /* Adjust the value between 0 and 1 */
+  }
