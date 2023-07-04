@@ -1,75 +1,44 @@
-/* Add your preferred styles here */
-
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    font-family: 'Playfair Display', serif;
+    color: #333333;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Crimson Text', serif;
+}
+
+a {
+    color: #333333;
+    text-decoration: none;
+}
+
+/* Header Styles */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
 }
 
 .header-top {
     display: flex;
     align-items: center;
-    padding: 20px;
+    justify-content: space-between;
 }
 
 .logo img {
-    width: 50px; /* Adjust the size as needed */
-    height: auto;
-    margin-right: 10px;
-}
-
-.header-text {
-    flex-grow: 1;
-    text-align: center;
-}
-
-.social-links {
-    display: flex;
-    align-items: center;
+    width: 80px;
 }
 
 .social-links img {
-    width: 30px; /* Adjust the size as needed */
-    height: auto;
-    margin-left: 10px;
+    width: 20px;
+    margin: 0 5px;
 }
 
 .header-bottom {
-    background-color: #666;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-main {
-    padding: 20px;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+    margin-top: 20px;
 }
 
 .welcome {
@@ -92,6 +61,34 @@ nav ul li {
     margin: 0 10px;
 }
 
-nav ul li a {
-    text-decoration: none;
+/* Main Styles */
+main {
+    padding: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+.center-content {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px; /* Adjust the max-width as needed */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-form textarea {
+    width: 100%;
+    max-width: 100%;
+    resize: vertical;
+    box-sizing: border-box; /* Add this line */
 }
