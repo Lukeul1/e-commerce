@@ -1,53 +1,49 @@
-// JavaScript
+// Define the imageFiles array with paths to the image files
+const imageFiles = [
+  'images/collection-1.jpeg',
+  'images/collection-2.jpeg',
+  'images/collection-3.jpeg',
+  'images/collection-4.jpeg',
+  'images/collection-5.jpeg',
+  'images/collection-6.jpeg',
+  'images/collection-7.jpeg',
+  'images/collection-8.jpeg',
+  'images/collection-9.jpeg',
+  'images/collection-10.jpeg',
+  'images/collection-11.jpeg',
+  'images/collection-12.jpeg',
+  'images/collection-13.jpeg',
+  'images/collection-14.jpeg',
+  'images/collection-15.jpeg',
+  'images/collection-16.jpeg',
+  'images/collection-17.jpeg',
+  'images/collection-18.jpeg',
+  'images/collection-19.jpeg',
+  'images/collection-20.jpeg',
+  // Add more image paths as desired
+];
 
-window.onload = function() {
-  const slides = document.querySelectorAll('.image-slide');
-  const numSlides = document.querySelectorAll('.image-slide').length;
-  const numVisibleSlides = 3; // Number of slides to display at a time
-  let currentSlide = 0;
-  const slideInterval = 5000; // Change slide every 5 seconds
+// Function to display random images in the image placeholders
+function displayRandomImages() {
+  const imagePlaceholders = Array.from(document.querySelectorAll('.image-placeholder'));
 
-  function displaySlides() {
-    for (let i = 0; i < numSlides; i++) {
-      slides[i].classList.remove('active');
+  const randomIndices = [];
+  while (randomIndices.length < 3) {
+    const randomIndex = Math.floor(Math.random() * imageFiles.length);
+    if (!randomIndices.includes(randomIndex)) {
+      randomIndices.push(randomIndex);
     }
+  }
 
-    for (let i = 0; i < numVisibleSlides; i++) {
-      let slideIndex = (currentSlide + i) % numSlides;
-      slides[slideIndex].classList.add('active');
+  imagePlaceholders.forEach((placeholder, index) => {
+    if (randomIndices.includes(index)) {
+      const randomImage = imageFiles[randomIndices[index]];
+      placeholder.style.backgroundImage = `url(${randomImage})`;
+    } else {
+      placeholder.style.backgroundImage = 'none';
     }
-  }
+  });
+}
 
-  function nextSlide() {
-    currentSlide = (currentSlide + numVisibleSlides) % numSlides;
-    displaySlides();
-    setTimeout(replaceSlideImages, slideInterval); // Replace slide images after 5 seconds
-  }
-
-  function replaceSlideImages() {
-    const activeSlides = document.querySelectorAll('.image-slide.active');
-    const usedIndices = []; // Track used indices to ensure uniqueness
-    activeSlides.forEach(slide => {
-      const image = slide.querySelector('img');
-      const collectionFolder = 'images/Collection/';
-      let randomImageIndex;
-      
-      do {
-        randomImageIndex = Math.floor(Math.random() * numSlides);
-      } while (usedIndices.includes(randomImageIndex));
-  
-      usedIndices.push(randomImageIndex);
-      
-      const randomImagePath = collectionFolder + 'collection-' + (randomImageIndex + 1) + '.jpeg';
-      image.src = randomImagePath;
-      slide.classList.remove('active');
-    });
-  }
-
-  function startSlideshow() {
-    displaySlides();
-    setInterval(nextSlide, slideInterval);
-  }
-
-  startSlideshow();
-};
+// Call the displayRandomImages function to display the random images
+displayRandomImages();
