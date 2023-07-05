@@ -181,3 +181,15 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.about-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
