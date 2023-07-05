@@ -63,7 +63,11 @@ nav ul li {
 
 /* Main Styles */
 main {
+    min-height: calc(100vh - 260px); /* Adjust the value as needed */
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Footer Styles */
@@ -104,6 +108,7 @@ footer {
     max-width: 100%;
     resize: vertical;
     box-sizing: border-box;
+    height: 150px; /* Increase the height as needed */
 }
 
 .contact-form button {
@@ -115,13 +120,13 @@ footer {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  }
+}
 
 .background-image {
     opacity: 0.5; /* Adjust the value between 0 and 1 */
-  }
+}
 
-  .testimonial-section {
+.testimonial-section {
     margin-top: 40px;
 }
 
@@ -160,60 +165,59 @@ footer {
 }
 
 .testimonial-author {
-    font-style: italic;
+font-style: italic;
 }
 
 .featured-section {
-    /* Add desired styles for the featured section */
+/* Add desired styles for the featured section */
 }
 
 .image-slide {
-    /* Existing styles for .image-slide */
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-    position: relative;
-  }
-  
-  .image-placeholder {
-    /* Existing styles for .image-placeholder */
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
- .fade-in {
-    opacity: 1;
- }
+/* Existing styles for .image-slide */
+opacity: 0;
+transition: opacity 0.8s ease-in-out;
+position: relative;
+}
+
+.image-placeholder {
+/* Existing styles for .image-placeholder */
+width: 100%;
+height: 100%;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+.fade-in {
+opacity: 1;
+}
 
 .about-section {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+text-align: center;
+max-width: 800px;
+margin: 0 auto;
 }
 
 .content-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-#image-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
-            grid-gap: 20px; /* Adjust the gap between images */
-        }
-          
-.image-wrapper {
-            position: relative;
-            overflow: hidden;
-            border-radius: 5px;
-        }
-          
-.image-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-         }
+max-width: 800px;
+margin: 0 auto;
+padding: 20px;
+}
 
-  
+#image-container {
+display: grid;
+grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed /
+grid-gap: 20px; / Adjust the gap between images */
+}
+
+.image-wrapper {
+position: relative;
+overflow: hidden;
+border-radius: 5px;
+}
+
+.image-wrapper img {
+width: 100%;
+height: auto;
+display: block;
+}
