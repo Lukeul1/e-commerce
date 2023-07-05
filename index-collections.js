@@ -26,17 +26,15 @@ const imageFiles = [
 
 // Function to display random image in the featured collection section
 function displayRandomImage() {
-  const imagePlaceholder = document.querySelector('.image-placeholder');
+  const featuredImage = document.querySelector('.featured-image');
   const randomIndex = Math.floor(Math.random() * imageFiles.length);
   const randomImage = imageFiles[randomIndex];
-  
-  imagePlaceholder.style.backgroundImage = `url(${randomImage})`;
-  imagePlaceholder.classList.add('fade-in');
+
+  featuredImage.src = randomImage;
   
   setTimeout(() => {
-    imagePlaceholder.classList.remove('fade-in');
     displayRandomImage();
-  }, 5000); // Display the image for 5 seconds before fading out and showing the next one
+  }, 5000); // Display the image for 5 seconds before showing the next one
 }
 
 // Call the displayRandomImage function to display the random image

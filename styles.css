@@ -168,13 +168,8 @@ footer {
 font-style: italic;
 }
 
-.featured-section {
-/* Add desired styles for the featured section */
-}
-
 .image-slide {
 /* Existing styles for .image-slide */
-opacity: 0;
 transition: opacity 0.8s ease-in-out;
 position: relative;
 }
