@@ -1,3 +1,4 @@
+
 // Define the imageFiles array with paths to the image files
 const imageFiles = [
   'images/collection-1.jpeg',
@@ -23,35 +24,20 @@ const imageFiles = [
   // Add more image paths as desired
 ];
 
-// Function to display random images in the image placeholders
-function displayRandomImages() {
-  const imagePlaceholders = Array.from(document.querySelectorAll('.image-placeholder'));
-
-  const randomIndices = [];
-  while (randomIndices.length < 3) {
-    const randomIndex = Math.floor(Math.random() * imageFiles.length);
-    if (!randomIndices.includes(randomIndex)) {
-      randomIndices.push(randomIndex);
-    }
-  }
-
-  imagePlaceholders.forEach((placeholder, index) => {
-    if (randomIndices.includes(index)) {
-      const randomImage = imageFiles[randomIndices[index]];
-      placeholder.style.backgroundImage = `url(${randomImage})`;
-    } else {
-      placeholder.style.backgroundImage = 'none';
-    }
-    placeholder.classList.add('fade-in');
-  });
-
+// Function to display random image in the featured collection section
+function displayRandomImage() {
+  const imagePlaceholder = document.querySelector('.image-placeholder');
+  const randomIndex = Math.floor(Math.random() * imageFiles.length);
+  const randomImage = imageFiles[randomIndex];
+  
+  imagePlaceholder.style.backgroundImage = `url(${randomImage})`;
+  imagePlaceholder.classList.add('fade-in');
+  
   setTimeout(() => {
-    imagePlaceholders.forEach((placeholder) => {
-      placeholder.classList.remove('fade-in');
-    });
-    setTimeout(displayRandomImages, 800); // Adjust the delay as desired
-  }, 4000); // Adjust the delay as desired
+    imagePlaceholder.classList.remove('fade-in');
+    displayRandomImage();
+  }, 5000); // Display the image for 5 seconds before fading out and showing the next one
 }
 
-// Call the displayRandomImages function to display the random images
-displayRandomImages();
+// Call the displayRandomImage function to display the random image
+displayRandomImage();

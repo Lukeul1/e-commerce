@@ -31,3 +31,4 @@ function startSlideshow() {
 
 // Start the slideshow when the DOM has finished loading
 document.addEventListener('DOMContentLoaded', startSlideshow);
+
