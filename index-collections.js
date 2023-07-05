@@ -42,7 +42,15 @@ function displayRandomImages() {
     } else {
       placeholder.style.backgroundImage = 'none';
     }
+    placeholder.classList.add('fade-in');
   });
+
+  setTimeout(() => {
+    imagePlaceholders.forEach((placeholder) => {
+      placeholder.classList.remove('fade-in');
+    });
+    setTimeout(displayRandomImages, 800); // Adjust the delay as desired
+  }, 4000); // Adjust the delay as desired
 }
 
 // Call the displayRandomImages function to display the random images

@@ -168,19 +168,24 @@ footer {
 }
 
 .image-slide {
-    flex: 0 0 33.33%;
+    /* Existing styles for .image-slide */
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
     position: relative;
   }
   
-.image-placeholder {
+  .image-placeholder {
+    /* Existing styles for .image-placeholder */
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
+  }
+  
+ .fade-in {
+    opacity: 1;
+ }
 
 .about-section {
     text-align: center;
@@ -189,7 +194,26 @@ footer {
 }
 
 .content-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+#image-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
+            grid-gap: 20px; /* Adjust the gap between images */
+        }
+          
+.image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+          
+.image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+         }
+
+  
